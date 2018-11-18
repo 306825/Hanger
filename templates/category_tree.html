@@ -1,0 +1,21 @@
+<div class="container" ng-show="category">
+  <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg" ng-repeat="ancestor in category.ancestors">
+      <a ng-href="#/category/{{ancestor}}">
+        {{ancestor}}
+      </a>
+  <div class="child-categories" ng-show="children && children.length">
+    <div  class="child-arrow"
+            ng-init="display = false;"
+            ng-click="display = !display;">
+        <i class="fa fa-chevron-down"></i>
+    </div>
+    <div class="child-select" ng-show="display">
+      <div ng-repeat="child in children">
+          <a ng-href="#/category/{{child._id}}">
+            {{child._id}}
+          </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
